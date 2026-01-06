@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../context/AuthProvider";
+import { Link, Links } from "react-router-dom";
 
 const Home = () => {
 
@@ -21,7 +22,6 @@ const Home = () => {
                 );
 
                 setCourses(res.data.results);
-                console.log(res.data.results);
             } catch (error) {
                 console.error("Error:", error.response?.data || error.message);
             }
@@ -45,7 +45,9 @@ const Home = () => {
                         <p>{course.description}</p>
                         <p>{course.price}</p>
                         <div className="card-actions justify-end">
-                            <button className="btn btn-primary">Details</button>
+                            <Link to={`/course/${course.id}`}>
+                                <button className="btn btn-primary">Details</button>
+                            </Link>
                             <button className="btn btn-primary">Enroll</button>
                         </div>
                     </div>

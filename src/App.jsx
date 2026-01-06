@@ -7,6 +7,9 @@ import AuthProvider from './context/AuthProvider';
 import ProtectedRoute from './Routes/ProtectedRoute';
 import Navbar from './common/Navbar';
 import CreateCourse from './Pages/Admin/CreateCourse';
+import CourseDetail from './components/CourseDetail';
+import CourseLessons from './components/CourseLessons';
+import CourseMaterials from './components/CourseMaterials';
 
 function App() {
 
@@ -23,7 +26,10 @@ function App() {
           <Profile />
         </ProtectedRoute>
       } />
+      <Route path="/metarial/:id" element={<CourseMaterials/>} />
+      <Route path='/course/:id' element={<CourseDetail/>} />
       <Route path='/create_course' element={<CreateCourse/>} />
+      <Route path="/lessons/:id" element={<CourseLessons/>} />
    </Routes>
    </BrowserRouter>
    </AuthProvider>
