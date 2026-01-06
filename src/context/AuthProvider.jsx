@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { registerUser, loginUser } from "../services/authServices";
+import { getCategories } from "../services/courseServices";
 
 const AuthContext = createContext();
 
@@ -56,6 +57,7 @@ const AuthProvider = ({ children }) => {
         setUser(null);
         setToken(null);
     };
+
 
     return (
         <AuthContext.Provider value={{ user, token, login, register, logout }}>

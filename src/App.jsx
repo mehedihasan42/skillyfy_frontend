@@ -6,6 +6,7 @@ import Home from './components/Home';
 import AuthProvider from './context/AuthProvider';
 import ProtectedRoute from './Routes/ProtectedRoute';
 import Navbar from './common/Navbar';
+import CreateCourse from './Pages/Admin/CreateCourse';
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
           <Profile />
         </ProtectedRoute>
       } />
+      <Route path='/create_course' element={<CreateCourse/>} />
    </Routes>
    </BrowserRouter>
    </AuthProvider>
