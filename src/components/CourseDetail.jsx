@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, redirect, useParams } from "react-router-dom";
 import { useAuth } from "../context/AuthProvider";
 import axios from "axios";
 
@@ -40,6 +40,30 @@ const CourseDetail = () => {
     return <p className="text-center mt-10 text-red-500">Course not found</p>;
   }
 
+
+const handlePayment = (courseId) => async () => {
+  try {
+    const res = await axios.post(
+      `http://localhost:8000/course/buy-course/${courseId}/`,
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    const paymentUrl = res.data.payment_url;
+    
+    window.location.href = paymentUrl;
+
+  } catch (error) {
+    console.error("Payment error:", error);
+  }
+};
+
+
+
   return (
     <div className="card card-side bg-base-100 shadow-sm w-8/12 mx-auto mt-6">
       <figure>
@@ -64,7 +88,9 @@ const CourseDetail = () => {
            <Link to={`/lessons/${course.id}`}>
             <button className="btn btn-primary">Lessons</button>
           </Link>
-          <button className="btn btn-primary">Enroll Now</button>
+          <button
+          onClick={handlePayment(course.id)}
+           className="btn btn-primary">Enroll Now</button>
         </div>
       </div>
     </div>

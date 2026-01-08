@@ -48,7 +48,6 @@ const Home = () => {
                             <Link to={`/course/${course.id}`}>
                                 <button className="btn btn-primary">Details</button>
                             </Link>
-                            <button className="btn btn-primary">Enroll</button>
                         </div>
                     </div>
                 </div>

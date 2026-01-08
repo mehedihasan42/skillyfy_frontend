@@ -10,6 +10,7 @@ import CreateCourse from './Pages/Admin/CreateCourse';
 import CourseDetail from './components/CourseDetail';
 import CourseLessons from './components/CourseLessons';
 import CourseMaterials from './components/CourseMaterials';
+import PaymentSuccess from './components/PaymentSuccess';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
       <Route path='/course/:id' element={<CourseDetail/>} />
       <Route path='/create_course' element={<CreateCourse/>} />
       <Route path="/lessons/:id" element={<CourseLessons/>} />
+      <Route path="/payment-success" element={<PaymentSuccess/>} />
    </Routes>
    </BrowserRouter>
    </AuthProvider>
