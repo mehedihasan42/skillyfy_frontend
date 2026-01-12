@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useAuth } from "../context/AuthProvider";
 
 const CourseLessons = () => {
@@ -71,7 +71,12 @@ const CourseLessons = () => {
                 <p className="text-sm text-gray-600">
                   {lesson.description}
                 </p>
-
+                <Link
+                  to={`/lesson/${lesson.id}/quizzes`}
+                  className="btn btn-primary mt-4 w-10"
+                >
+                  Quiz
+                </Link>
                 <div className="card-actions justify-end mt-4">
                   <video
                     controls

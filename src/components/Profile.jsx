@@ -40,7 +40,7 @@ const Profile = () => {
                     <figure>
                        <img
                             style={{ width: "100%", height: "200px" }}
-                            src={`http://localhost:8000${course.banner}`}
+                            src={`https://skillyfy-backend.onrender.com${course.banner}`}
                             alt={course.title} />
                     </figure>
                     <div className="card-body">

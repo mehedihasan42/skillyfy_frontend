@@ -11,30 +11,36 @@ import CourseDetail from './components/CourseDetail';
 import CourseLessons from './components/CourseLessons';
 import CourseMaterials from './components/CourseMaterials';
 import PaymentSuccess from './components/PaymentSuccess';
+import Quiz from './Pages/Quizs/Quiz';
 
 function App() {
 
   return (
-   <AuthProvider>
-    <BrowserRouter>
-    <Navbar/>
-   <Routes>
-    <Route path='/' element={<Home/>} />
-    <Route path='/login' element={<Login/>} />
-    <Route path='/registar' element={<Registar/>} />
-      <Route path='/profile' element={
-        <ProtectedRoute>
-          <Profile />
-        </ProtectedRoute>
-      } />
-      <Route path="/metarial/:id" element={<CourseMaterials/>} />
-      <Route path='/course/:id' element={<CourseDetail/>} />
-      <Route path='/create_course' element={<CreateCourse/>} />
-      <Route path="/lessons/:id" element={<CourseLessons/>} />
-      <Route path="/payment-success" element={<PaymentSuccess/>} />
-   </Routes>
-   </BrowserRouter>
-   </AuthProvider>
+    <AuthProvider>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/registar' element={<Registar />} />
+          <Route path='/profile' element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          } />
+          <Route path="/metarial/:id" element={<CourseMaterials />} />
+          <Route path='/course/:id' element={
+            <ProtectedRoute>
+              <CourseDetail />
+            </ProtectedRoute>
+          } />
+          <Route path='/create_course' element={<CreateCourse />} />
+          <Route path="/lessons/:id" element={<CourseLessons />} />
+          <Route path="/payment-success" element={<PaymentSuccess />} />
+          <Route path="/lesson/:lessonId/quizzes" element={<Quiz />} />
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   )
 }
 

@@ -25,28 +25,90 @@ const Registar = () => {
         await register(userData);
     }
     return (
-       <form onSubmit={handleSubmit}>
-        <h2>Registar</h2>
-        <div>
-            <label htmlFor="username">Username:</label>
-            <input type="text" id="username" name="username" />
-        </div><div>
-            <label htmlFor="email">Email:</label>
-            <input type="email" id="email" name="email" />
-        </div>
-        <div>
-            <label htmlFor="phone">Phone:</label>
-            <input type="tel" id="phone" name="phone" />
-        </div>
-        <div>
-            <label htmlFor="password">Password:</label>
-            <input type="password" id="password" name="password" />
-        </div><div>
-            <label htmlFor="confirmPassword">Confirm Password:</label>
-            <input type="password" id="confirmPassword" name="confirmPassword" />
-        </div>
-        <button type="submit">Register</button>
-       </form>
+     <div className='hero bg-base-200 min-h-screen'>
+        <form
+  className="card w-full max-w-sm bg-base-100 shadow-xl p-6 space-y-4"
+  onSubmit={handleSubmit}
+>
+  <h2 className="text-2xl font-bold text-center">Register</h2>
+
+  <div className="form-control">
+    <label className="label">
+      <span className="label-text">Username</span>
+    </label>
+    <input
+      type="text"
+      name="username"
+      placeholder="Enter your username"
+      className="input input-bordered w-full"
+      required
+    />
+  </div>
+
+  <div className="form-control">
+    <label className="label">
+      <span className="label-text">Email</span>
+    </label>
+    <input
+      type="email"
+      name="email"
+      placeholder="Enter your email"
+      className="input input-bordered w-full"
+      required
+    />
+  </div>
+
+  <div className="form-control">
+    <label className="label">
+      <span className="label-text">Phone</span>
+    </label>
+    <input
+      type="tel"
+      name="phone"
+      placeholder="Enter your phone number"
+      className="input input-bordered w-full"
+    />
+  </div>
+
+  <div className="form-control">
+    <label className="label">
+      <span className="label-text">Password</span>
+    </label>
+    <input
+      type="password"
+      name="password"
+      placeholder="Create a password"
+      className="input input-bordered w-full"
+      required
+    />
+  </div>
+
+  <div className="form-control">
+    <label className="label">
+      <span className="label-text">Confirm Password</span>
+    </label>
+    <input
+      type="password"
+      name="confirmPassword"
+      placeholder="Confirm your password"
+      className="input input-bordered w-full"
+      required
+    />
+  </div>
+
+  <button className="btn btn-primary w-full">
+    Register
+  </button>
+
+  <p className="text-center text-sm">
+    Already have an account?{" "}
+    <a href="/login" className="link link-primary">
+      Login
+    </a>
+  </p>
+</form>
+
+     </div>
     );
 };
 

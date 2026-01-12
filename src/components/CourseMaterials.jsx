@@ -15,7 +15,7 @@ const CourseMaterials = () => {
     const fetchMaterials = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:8000/course/material/?courseId=${id}`,
+          `https://skillyfy-backend.onrender.com/course/material/?courseId=${id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
